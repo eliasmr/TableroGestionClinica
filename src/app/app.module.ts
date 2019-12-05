@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TableroGestionClinicaComponent } from './tablero-gestion-clinica/tablero-gestion-clinica.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const modules = [
   
 ];
@@ -12,7 +13,7 @@ const routes: Routes = [
   { path: 'Tablero/Gestion/Clinica', component: TableroGestionClinicaComponent, pathMatch: 'full' },  
 ];
 @NgModule({
-  imports: [...modules],
+  imports: [...modules, BrowserAnimationsModule],
   exports: [...modules],
   declarations: []
 })export class MaterialModule {};
