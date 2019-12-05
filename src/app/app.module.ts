@@ -9,7 +9,7 @@ const modules = [
   
 ];
 const routes: Routes = [
-  { path: 'Tablero/Gestion/Clinica', component: TableroGestionClinicaComponent, pathMatch: 'full' },
+  { path: 'Tablero/Gestion/Clinica', component: TableroGestionClinicaComponent, pathMatch: 'full' },  
 ];
 @NgModule({
   imports: [...modules],
