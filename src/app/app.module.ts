@@ -20,6 +20,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
 
 const modules = [
   BrowserAnimationsModule,
@@ -30,7 +31,8 @@ const modules = [
   MatExpansionModule,
   MatButtonModule,
   MatGridListModule,
-  MatIconModule
+  MatIconModule,
+  MatInputModule
 ];
 const routes: Routes = [
   { path: 'Tablero/Gestion/Clinica', component: TableroGestionClinicaComponent, pathMatch: 'full' },  

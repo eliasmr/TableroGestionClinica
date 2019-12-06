@@ -14,6 +14,18 @@ export class PacienteAsignadoModeloComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+  panels = [
+    {
+    title: 'panel 1',
+    content: 'content 1'
+  },
+  {
+    title: 'panel 2',
+    content: 'content 2'
+  },
+  ] */
+
   expandPanel(matExpansionPanel, event): void {
     event.stopPropagation(); // Preventing event bubbling
     
