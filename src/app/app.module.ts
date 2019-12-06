@@ -34,7 +34,6 @@ const modules = [
 ];
 const routes: Routes = [
   { path: 'Tablero/Gestion/Clinica', component: TableroGestionClinicaComponent, pathMatch: 'full' },  
-  { path: 'filtros', component: FiltrosComponent, pathMatch: 'full' },  
 ];
 @NgModule({
   imports: [...modules],
