@@ -1,0 +1,70 @@
+<mat-accordion>
+    <mat-expansion-panel #expansionPanel>
+        <mat-expansion-panel-header collapsedHeight="150px"
+            expandedHeight="150px" (click)="expandPanel(expansionPanel, $event)"> 
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <b>Juan Perez (Masculino, 65 años) </b>
+                            <div class="float-right">
+                                    <button mat-icon-button style="height: 28px; width: 28px;">
+                                        <mat-icon aria-hidden="false" style=" vertical-align: top;" aria-label="">account_box</mat-icon>
+                                    </button>
+                                    <button mat-icon-button style="height: 28px; width: 28px;">
+                                        <mat-icon aria-hidden="false" style="vertical-align: top;" aria-label="">local_hospital</mat-icon>
+                                    </button>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <button mat-icon-button style="height: 28px; width: 28px;">
+                                <mat-icon aria-hidden="false" style=" vertical-align: top;" aria-label="">more_horiz</mat-icon>
+                            </button>
+                        </div>
+                        <div class="col-sm-2">
+                            Sura EPS
+                        </div>
+                        <div class="col-sm-2">
+                            Iniciado
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            Dx Tumor maligno del intestino delgado 
+                            <div class="float-right">Inicio 01/03/2019</div>
+                        </div>
+                        <div class="col-sm-2">
+                            Ciclo 1 de 3
+                        </div>
+                        <div class="col-sm-2">
+                            Sesion 2 - Dia 15
+                        </div>
+                        <div class="col-sm-2">
+                            15 Dias
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            Politerapia de alto riesgo (Folfiri + Bevacizumab)
+                        </div>
+                        <div class="col-sm-2">
+                            Oncologia
+                        </div>
+                        <div class="col-sm-2">
+                            Curativo
+                        </div>
+                        <div class="col-sm-2">
+                            <button mat-icon-button style="height: 28px; width: 28px;">
+                                <mat-icon aria-hidden="false" style=" vertical-align: top;" aria-label="">priority_high</mat-icon>
+                            </button>    
+                        </div>
+                    </div>
+                </div>          
+        </mat-expansion-panel-header>  
+        <mat-grid-list cols="4"  [style.background]="'skyblue'">
+                <mat-grid-tile>Tile 1 </mat-grid-tile>
+                <mat-grid-tile>Tile 2 </mat-grid-tile>
+                <mat-grid-tile>Tile 3 </mat-grid-tile>
+                <mat-grid-tile>Tile 4 </mat-grid-tile>
+                </mat-grid-list> 
+    </mat-expansion-panel>
+</mat-accordion>
