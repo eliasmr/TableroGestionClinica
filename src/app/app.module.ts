@@ -4,23 +4,32 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 
-import {MatRadioModule} from '@angular/material/radio';
-import {MatListModule} from '@angular/material/list';
-import {MatSelectModule} from '@angular/material/select';
-import { MatCardModule } from '@angular/material/card';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TableroGestionClinicaComponent } from './tablero-gestion-clinica/tablero-gestion-clinica.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PacienteAsignadoModeloComponent } from './paciente-asignado-modelo/paciente-asignado-modelo.component';
+import { PacienteAsignadoModeloComponent } from './paciente-asignado-modelo-estructura/paciente-asignado-modelo/paciente-asignado-modelo.component';
 import { FiltrosComponent } from './filtros/filtros.component';
+import { DiagnosticosActivosComponent } from './paciente-asignado-modelo-estructura/diagnosticos-activos/diagnosticos-activos.component';
+import { PacienteAsignadoModeloBusquedaComponent } from './paciente-asignado-modelo-estructura/paciente-asignado-modelo-busqueda/paciente-asignado-modelo-busqueda.component';
+import { AlertasAdministracionPacienteComponent } from './paciente-asignado-modelo-estructura/alertas-administracion-paciente/alertas-administracion-paciente.component';
+import { CancelarModeloComponent } from './paciente-asignado-modelo-estructura/cancelar-modelo/cancelar-modelo.component';
 
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatListModule} from '@angular/material/list';
+import {MatSelectModule} from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+
 
 const modules = [
   BrowserAnimationsModule,
@@ -32,7 +41,11 @@ const modules = [
   MatButtonModule,
   MatGridListModule,
   MatIconModule,
-  MatInputModule
+  MatInputModule,
+  MatMenuModule,
+  MatDividerModule,
+  MatDialogModule,
+  MatFormFieldModule
 ];
 const routes: Routes = [
   { path: 'Tablero/Gestion/Clinica', component: TableroGestionClinicaComponent, pathMatch: 'full' },  
@@ -47,10 +60,12 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     TableroGestionClinicaComponent,
-
+    DiagnosticosActivosComponent,
     PacienteAsignadoModeloComponent,
-
-    FiltrosComponent
+    FiltrosComponent,
+    PacienteAsignadoModeloBusquedaComponent,
+    AlertasAdministracionPacienteComponent,
+    CancelarModeloComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -65,7 +80,11 @@ const routes: Routes = [
   entryComponents: [
     TableroGestionClinicaComponent,
     PacienteAsignadoModeloComponent,
-    FiltrosComponent
+    DiagnosticosActivosComponent,
+    FiltrosComponent,
+    PacienteAsignadoModeloBusquedaComponent,
+    AlertasAdministracionPacienteComponent,
+    CancelarModeloComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
