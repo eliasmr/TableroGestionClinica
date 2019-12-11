@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tablero-gestion-clinica.component.css']
 })
 export class TableroGestionClinicaComponent implements OnInit {
-
+  showFiller: boolean = true;
   constructor() { }
 
   ngOnInit() {

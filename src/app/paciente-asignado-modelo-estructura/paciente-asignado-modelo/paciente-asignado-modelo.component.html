@@ -6,32 +6,12 @@
           {{panel.content}}
         </mat-expansion-panel>      
 </mat-accordion>-->
-<div class="container" style="padding-top: 20px;height: 70px;">
-    <div class="row">
-        <div class="col-sm-6" style="padding-top: 15px;">
-            <h6>Tablero de Gestion Clinica</h6>
-        </div>
-        <div class="col-sm-3" style="padding-top: 10px;">
-            <button mat-button >
-                 Ordenar
-            </button>
-        </div>
-        <div class="col-sm-3">
-            <mat-form-field>
-                <input matInput placeholder="Buscar" >
-                <button mat-button  matSuffix mat-icon-button aria-label="Buscar" (click)="value=''">
-                        <mat-icon>search</mat-icon>
-                </button>
-            </mat-form-field>
-        </div>
-        
-    </div>
-</div>
-<div class="basic-container">
+
+
 <mat-accordion>
     <mat-expansion-panel #expansionPanel>
         <mat-expansion-panel-header collapsedHeight="110px"
-            expandedHeight="110px" (click)="expandPanel(expansionPanel, $event)"> 
+            expandedHeight="110px" (click)="expansionPanel.expanded?expandPanel(expansionPanel, $event):closeOpened(expansionPanel, $event)"> 
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6">
@@ -40,15 +20,27 @@
                                     <button mat-icon-button style="height: 28px; width: 28px;">
                                         <mat-icon aria-hidden="false" style=" vertical-align: top;" aria-label="">account_box</mat-icon>
                                     </button>
-                                    <button mat-icon-button style="height: 28px; width: 28px;">
+                                    <button mat-icon-button style="height: 28px; width: 28px;" (click)="openDiagnosticoActivosDialog()">
                                         <mat-icon aria-hidden="false" style="vertical-align: top;" aria-label="">local_hospital</mat-icon>
                                     </button>
                             </div>
                         </div>
                         <div class="col-sm-2">
-                            <button mat-icon-button style="height: 28px; width: 28px;">
-                                <mat-icon aria-hidden="false" style=" vertical-align: top;" aria-label="">more_horiz</mat-icon>
+                            <button mat-icon-button style="height: 28px; width: 28px" (click)="openAlertasAdministrativasDialog()">
+                                    <mat-icon aria-hidden="false" style=" vertical-align: top;height: 28px; width: 28px" aria-label="">warning</mat-icon>
                             </button>
+                            <button mat-icon-button [matMenuTriggerFor]="afterMenu" style="height: 28px; width: 28px">
+                                    <mat-icon aria-hidden="false" style=" vertical-align: top;height: 28px; width: 28px" aria-label="">more_horiz</mat-icon>
+                            </button>
+                            <mat-menu #afterMenu="matMenu" xPosition="after">
+                                <button mat-menu-item (click)="openCancelarModeloDialog()">Cancelar modelo</button>
+                                <button mat-menu-item>Suspender modelo</button>
+                                <button mat-menu-item>Reiniciar modelo</button>
+                                <button mat-menu-item>Ver orden</button>
+                                <button mat-menu-item>Ver demograficos</button>
+                                <button mat-menu-item>Ver trazabilidad de estados</button>
+                                <button mat-menu-item>Consentimiento informado</button>
+                            </mat-menu>
                         </div>
                         <div class="col-sm-2">
                             Sura EPS
@@ -98,4 +90,3 @@
                 </mat-grid-list> 
     </mat-expansion-panel>
 </mat-accordion>
-</div>

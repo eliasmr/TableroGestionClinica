@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,37 +15,15 @@ import { PacienteAsignadoModeloBusquedaComponent } from './paciente-asignado-mod
 import { AlertasAdministracionPacienteComponent } from './paciente-asignado-modelo-estructura/alertas-administracion-paciente/alertas-administracion-paciente.component';
 import { CancelarModeloComponent } from './paciente-asignado-modelo-estructura/cancelar-modelo/cancelar-modelo.component';
 
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatButtonModule} from '@angular/material/button';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatIconModule} from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatListModule} from '@angular/material/list';
-import {MatSelectModule} from '@angular/material/select';
-import { MatCardModule } from '@angular/material/card';
-import {MatFormFieldModule} from '@angular/material/form-field';
 
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MaterialModule} from './MaterialModule';
 
 
 const modules = [
-  BrowserAnimationsModule,
-  MatRadioModule,
-  MatListModule,
-  MatSelectModule,
-  MatCardModule,
-  MatExpansionModule,
-  MatButtonModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatMenuModule,
-  MatDividerModule,
-  MatDialogModule,
-  MatFormFieldModule
+  BrowserAnimationsModule
 ];
 const routes: Routes = [
   { path: 'Tablero/Gestion/Clinica', component: TableroGestionClinicaComponent, pathMatch: 'full' },  
@@ -54,7 +32,7 @@ const routes: Routes = [
   imports: [...modules],
   exports: [...modules],
   declarations: []
-})export class MaterialModule {};
+})export class Modules {};
 
 @NgModule({
   declarations: [
@@ -73,7 +51,10 @@ const routes: Routes = [
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    Modules,
     MaterialModule,
+    ReactiveFormsModule,
+    MatNativeDateModule,
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule],
@@ -90,3 +71,6 @@ const routes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
