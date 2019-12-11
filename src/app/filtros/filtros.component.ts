@@ -8,6 +8,7 @@ import { list} from './interfacesFiltros';
   styleUrls: ['./filtros.component.css']
 })
 export class FiltrosComponent implements OnInit {
+  filtros : boolean = false;
   favoriteSeason: string;
   seleccionados: string;
   radioButtonPacientes: string[] = [

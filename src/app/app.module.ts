@@ -1,13 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 
-import {MatRadioModule} from '@angular/material/radio';
-import {MatListModule} from '@angular/material/list';
-import {MatSelectModule} from '@angular/material/select';
-import { MatCardModule } from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,21 +11,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PacienteAsignadoModeloComponent } from './paciente-asignado-modelo/paciente-asignado-modelo.component';
 import { FiltrosComponent } from './filtros/filtros.component';
 
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatButtonModule} from '@angular/material/button';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatIconModule} from '@angular/material/icon';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MaterialModule} from './MaterialModule';
+
 
 const modules = [
-  BrowserAnimationsModule,
-  MatRadioModule,
-  MatListModule,
-  MatSelectModule,
-  MatCardModule,
-  MatExpansionModule,
-  MatButtonModule,
-  MatGridListModule,
-  MatIconModule
+  BrowserAnimationsModule
 ];
 const routes: Routes = [
   { path: 'Tablero/Gestion/Clinica', component: TableroGestionClinicaComponent, pathMatch: 'full' },  
@@ -39,16 +27,15 @@ const routes: Routes = [
   imports: [...modules],
   exports: [...modules],
   declarations: []
-})export class MaterialModule {};
+})export class Modules {};
 
 @NgModule({
   declarations: [
     AppComponent,
     TableroGestionClinicaComponent,
-
     PacienteAsignadoModeloComponent,
-
     FiltrosComponent
+    
   ],
   imports: [
     BrowserAnimationsModule,
@@ -56,7 +43,10 @@ const routes: Routes = [
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    Modules,
     MaterialModule,
+    ReactiveFormsModule,
+    MatNativeDateModule,
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule],
@@ -69,3 +59,6 @@ const routes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));

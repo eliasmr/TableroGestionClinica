@@ -1,10 +1,14 @@
-<div class="container-fluid" style="padding-left: 50px; padding-right: 50px;">
- <div class="row ">
-     <div class="col-sm-3" >
-        <app-filtros></app-filtros>
-     </div>
-     <div class="col-sm-9">
+<div class="container-fluid">
+
+    <body>
+        <mat-drawer-container class="mat-drawer-content ng-star-inserted" style="height: 800px;">
+            <mat-drawer #drawer mode="side">
+                <div *ngIf="showFiller" class="col-md-12">
+                    <app-filtros></app-filtros>
+                </div>
+            </mat-drawer>
+            <a mat-button (click)="drawer.toggle()"><i class="fa fa-arrow-circle-left"></i></a>
             <app-paciente-asignado-modelo></app-paciente-asignado-modelo>
-        </div>
- </div>    
+        </mat-drawer-container>
+    </body>
 </div>
