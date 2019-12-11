@@ -1,7 +1,37 @@
+<!--<mat-accordion>
+        <mat-expansion-panel *ngFor="let panel of panels">
+          <mat-expansion-panel-header>
+            {{panel.title}}
+          </mat-expansion-panel-header>
+          {{panel.content}}
+        </mat-expansion-panel>      
+</mat-accordion>-->
+<div class="container" style="padding-top: 20px;height: 70px;">
+    <div class="row">
+        <div class="col-sm-6" style="padding-top: 15px;">
+            <h6>Tablero de Gestion Clinica</h6>
+        </div>
+        <div class="col-sm-3" style="padding-top: 10px;">
+            <button mat-button >
+                 Ordenar
+            </button>
+        </div>
+        <div class="col-sm-3">
+            <mat-form-field>
+                <input matInput placeholder="Buscar" >
+                <button mat-button  matSuffix mat-icon-button aria-label="Buscar" (click)="value=''">
+                        <mat-icon>search</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        
+    </div>
+</div>
+<div class="basic-container">
 <mat-accordion>
     <mat-expansion-panel #expansionPanel>
-        <mat-expansion-panel-header collapsedHeight="150px"
-            expandedHeight="150px" (click)="expandPanel(expansionPanel, $event)"> 
+        <mat-expansion-panel-header collapsedHeight="110px"
+            expandedHeight="110px" (click)="expandPanel(expansionPanel, $event)"> 
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6">
@@ -68,3 +98,4 @@
                 </mat-grid-list> 
     </mat-expansion-panel>
 </mat-accordion>
+</div>
