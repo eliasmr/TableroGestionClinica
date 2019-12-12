@@ -14,12 +14,15 @@ import { DiagnosticosActivosComponent } from './paciente-asignado-modelo-estruct
 import { PacienteAsignadoModeloBusquedaComponent } from './paciente-asignado-modelo-estructura/paciente-asignado-modelo-busqueda/paciente-asignado-modelo-busqueda.component';
 import { AlertasAdministracionPacienteComponent } from './paciente-asignado-modelo-estructura/alertas-administracion-paciente/alertas-administracion-paciente.component';
 import { CancelarModeloComponent } from './paciente-asignado-modelo-estructura/cancelar-modelo/cancelar-modelo.component';
+import { SuspenderModeloComponent } from './paciente-asignado-modelo-estructura/suspender-modelo/suspender-modelo.component';
+import { ReiniciarModeloComponent } from './paciente-asignado-modelo-estructura/reiniciar-modelo/reiniciar-modelo.component';
 
 
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MaterialModule} from './MaterialModule';
+import { VerOrdenComponent } from './paciente-asignado-modelo-estructura/ver-orden/ver-orden.component';
 
 
 const modules = [
@@ -31,7 +34,7 @@ const routes: Routes = [
 @NgModule({
   imports: [...modules],
   exports: [...modules],
-  declarations: []
+  declarations: [VerOrdenComponent]
 })export class Modules {};
 
 @NgModule({
@@ -43,7 +46,9 @@ const routes: Routes = [
     FiltrosComponent,
     PacienteAsignadoModeloBusquedaComponent,
     AlertasAdministracionPacienteComponent,
-    CancelarModeloComponent
+    CancelarModeloComponent,
+    SuspenderModeloComponent,
+    ReiniciarModeloComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -65,7 +70,9 @@ const routes: Routes = [
     FiltrosComponent,
     PacienteAsignadoModeloBusquedaComponent,
     AlertasAdministracionPacienteComponent,
-    CancelarModeloComponent
+    CancelarModeloComponent,
+    SuspenderModeloComponent,
+    ReiniciarModeloComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

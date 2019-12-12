@@ -7,8 +7,12 @@
         </mat-expansion-panel>      
 </mat-accordion>-->
 
-
+<div *ngFor="let filtros of filtros">
+        <h6>hola {{filtros.nombrePaciente}}</h6>
+</div>
 <mat-accordion>
+
+    
     <mat-expansion-panel #expansionPanel>
         <mat-expansion-panel-header collapsedHeight="110px" style="padding-left: 0px;"
             expandedHeight="110px" (click)="expansionPanel.expanded?expandPanel(expansionPanel, $event):closeOpened(expansionPanel, $event)"> 

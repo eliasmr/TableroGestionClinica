@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { DiagnosticosActivosComponent } from '../diagnosticos-activos/diagnosticos-activos.component';
 import { AlertasAdministracionPacienteComponent } from '../alertas-administracion-paciente/alertas-administracion-paciente.component';
 import { CancelarModeloComponent } from '../cancelar-modelo/cancelar-modelo.component';
@@ -7,6 +7,9 @@ import { ReiniciarModeloComponent } from '../reiniciar-modelo/reiniciar-modelo.c
 import { MatDialog } from '@angular/material/dialog';
 
 
+import {pacienteAsignados} from '../../filtros/interfacesFiltros';
+import {DataServiceService} from '../../services/data-service.service';
+
 @Component({
   selector: 'app-paciente-asignado-modelo',
   templateUrl: './paciente-asignado-modelo.component.html',
@@ -14,24 +17,20 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class PacienteAsignadoModeloComponent implements OnInit {
 
+   filtros : pacienteAsignados[];
+
+
   panelOpenState = false;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, public dataServiceService : DataServiceService) {
 
-  ngOnInit() {
   }
 
-  /**
-  panels = [
-    {
-    title: 'panel 1',
-    content: 'content 1'
-  },
-  {
-    title: 'panel 2',
-    content: 'content 2'
-  },
-  ] */
+  ngOnInit() {
+    this.dataServiceService.datosObservable.subscribe(pacientesAsig =>{
+      this.filtros = pacientesAsig;
+  })
+}
 
   expandPanel(matExpansionPanel, event): void {
     event.stopPropagation(); 
