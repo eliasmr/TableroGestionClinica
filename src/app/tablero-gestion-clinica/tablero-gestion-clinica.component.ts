@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableroGestionClinicaComponent implements OnInit {
   showFiller: boolean = true;
-  constructor() { }
+  public prueba :string ;
+  constructor() { 
+    this.prueba = 'TableroGestionClinicaComponent'
+  }
 
   ngOnInit() {
   }

@@ -1,29 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
-import { list} from './interfacesFiltros';
+import {FormControl, FormGroup} from '@angular/forms';
 
+import { listas} from './listas';
+import {filtros} from './filtrosBusqueda';
+
+import {DataServiceService} from '../services/data-service.service'
 @Component({
   selector: 'app-filtros',
   templateUrl: './filtros.component.html',
   styleUrls: ['./filtros.component.css']
 })
 export class FiltrosComponent implements OnInit {
-  filtros : boolean = false;
-  favoriteSeason: string;
-  seleccionados: string;
-  radioButtonPacientes: string[] = [
-    'Pacientes asignados a un modelo',
-    'Pacientes agendados para una fecha',
-    'Pacientes por agendar'];
-  list: list[] = [
-    { value: 1, nombre: 'sede centro' },
-    { value: 2, nombre: 'sede centro' },
-    { value: 2, nombre: 'sede centro' }
-  ];
-
-  constructor() { }
-
-  ngOnInit() {
+  public filtro : filtros = new filtros();
+   pacientesAsignados = new listas();
+  public lista : listas = new listas();
+  form = new FormGroup({
+    ltsEsAdm: new FormControl(this.lista.LstestructuraAdministrativa),
+    ltsRes: new FormControl(this.lista.Lstresponsable),
+    ltsEsp: new FormControl(this.lista.Lstespacialidad),
+  });
+  
+  constructor(private dataServiceService : DataServiceService) { 
   }
+  
+  ngOnInit() {
+    this.dataServiceService.datosObservable.subscribe(pacientesAsig =>{
+      this.pacientesAsignados.listaPacientesAsignados = pacientesAsig;
+  })
+  }
+
+  filtros(){
+    this.filtro.listaSelect = this.form.value;
+    this.dataServiceService.datos(this.pacientesAsignados.listaPacientesAsignados)
+  }
+ 
 
 }

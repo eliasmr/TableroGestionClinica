@@ -1,40 +1,42 @@
 <body>
-    <form method="POST">
+    <div class="form-row">
+        <div class="col-md-11">
+            <h6>Filtros : </h6>
+        </div>
+    </div>
+    <div class="form-group" >
+        <mat-radio-group aria-labelledby="radio-radio-group-label" class="radio-radio-group"
+            [(ngModel)]="filtro.radioPacientes">
+            <mat-radio-button class="radio-radio-button" *ngFor="let radioButtonPacientes of lista.radioButtonPacientes"
+                [value]="radioButtonPacientes">
+                {{radioButtonPacientes}}
+            </mat-radio-button>
+        </mat-radio-group>
+    </div>
+    <form method="POST" [formGroup]="form">
         <div class="clearfix">
-            <div class="form-row">
-                <div class="col-md-11">
-                    <h6>Filtros : </h6>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="custom-control custom-radio" *ngFor="let nombre of radioButtonPacientes">
-                    <input type="radio" id="seleccionados" name="seleccionados" class="custom-control-input"
-                        [value]="seleccionados">
-                    <label class="custom-control-label" for="seleccionados">{{nombre}}</label>
-                </div>
-            </div>
             <div class="form-group">
                 <div class="form-row">
                     <label class="col-sm-11 col-form-label">Estructura adminstrativa : </label>
                     <div class="col-sm-11">
-                        <select class="form-control  border border-dark">
-                            <option *ngFor="let sedes of list" [value]="sedes.value">{{sedes.nombre}}</option>
+                        <select class="form-control  border border-dark"  formControlName="ltsEsAdm">
+                            <option *ngFor="let ltsEsAdm of lista.LstestructuraAdministrativa" [ngValue]="ltsEsAdm" >{{ltsEsAdm.nombre}}</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-row">
                     <label for="responsable" class="col-sm-5 col-form-label">Responsable : </label>
                     <div class="col-sm-6">
-                        <select class="form-control border border-dark" id="responsable">
-                            <option *ngFor="let sedes of list" [value]="sedes.value">{{sedes.nombre}}</option>
+                        <select class="form-control border border-dark" formControlName="ltsRes">
+                            <option *ngFor="let ltsRes of lista.Lstresponsable"[ngValue]="ltsRes">{{ltsRes.nombre}}</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-row">
                     <label for="responsable" class="col-sm-5 col-form-label">Especialidad : </label>
                     <div class="col-sm-6">
-                        <select class="form-control border border-dark" id="responsable">
-                            <option *ngFor="let sedes of list" [value]="sedes.value">{{sedes.nombre}}</option>
+                        <select class="form-control border border-dark" formControlName="ltsEsp" >
+                            <option *ngFor="let ltsEsp of lista.Lstespacialidad" [value]="ltsEsp">{{ltsEsp.nombre}}</option>
                         </select>
                     </div>
                 </div>
@@ -80,7 +82,7 @@
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
-                    <input type="text" class="col-md-6 form-control">
+                    <input type="text" class="col-md-6 form-control border border-dark">
                 </div>
                 <div class="form-row">
                     <label for="responsable" class="col-md-3 col-form-label"> Fecha Cita : </label>
@@ -107,7 +109,7 @@
                 <button type="button" id="limpiar" class="btn btn-primary">Limpiar</button>
             </div>
             <div class="btn-group">
-                <button type="button" class="btn btn-primary">Recuperar</button>
+                <button type="button" (click)= "filtros(filtro)" class="btn btn-primary">Recuperar</button>
             </div>
         </div>
     </form>
