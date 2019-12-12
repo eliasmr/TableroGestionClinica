@@ -10,7 +10,7 @@
 
 <mat-accordion>
     <mat-expansion-panel #expansionPanel>
-        <mat-expansion-panel-header collapsedHeight="110px"
+        <mat-expansion-panel-header collapsedHeight="110px" style="padding-left: 0px;"
             expandedHeight="110px" (click)="expansionPanel.expanded?expandPanel(expansionPanel, $event):closeOpened(expansionPanel, $event)"> 
                 <div class="container">
                     <div class="row">
@@ -34,8 +34,8 @@
                             </button>
                             <mat-menu #afterMenu="matMenu" xPosition="after">
                                 <button mat-menu-item (click)="openCancelarModeloDialog()">Cancelar modelo</button>
-                                <button mat-menu-item>Suspender modelo</button>
-                                <button mat-menu-item>Reiniciar modelo</button>
+                                <button mat-menu-item (click)="openSuspenderModeloDialog()">Suspender modelo</button>
+                                <button mat-menu-item (click)="openReiniciarModeloDialog()" >Reiniciar modelo</button>
                                 <button mat-menu-item>Ver orden</button>
                                 <button mat-menu-item>Ver demograficos</button>
                                 <button mat-menu-item>Ver trazabilidad de estados</button>

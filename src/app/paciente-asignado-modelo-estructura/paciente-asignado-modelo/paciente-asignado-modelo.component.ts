@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { DiagnosticosActivosComponent } from '../diagnosticos-activos/diagnosticos-activos.component';
 import { AlertasAdministracionPacienteComponent } from '../alertas-administracion-paciente/alertas-administracion-paciente.component';
 import { CancelarModeloComponent } from '../cancelar-modelo/cancelar-modelo.component';
+import { SuspenderModeloComponent } from '../suspender-modelo/suspender-modelo.component';
+import { ReiniciarModeloComponent } from '../reiniciar-modelo/reiniciar-modelo.component';
 import { MatDialog } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-paciente-asignado-modelo',
@@ -65,5 +68,16 @@ export class PacienteAsignadoModeloComponent implements OnInit {
   openCancelarModeloDialog(): void {
     const dialogRef = this.dialog.open(CancelarModeloComponent, {
     });
+  }
+
+  openSuspenderModeloDialog(): void {
+    const dialogRef = this.dialog.open(SuspenderModeloComponent, {
+    });
+  }
+
+  openReiniciarModeloDialog(): void {
+    const dialogRef = this.dialog.open(ReiniciarModeloComponent, {
+    });
+
   }
 }
