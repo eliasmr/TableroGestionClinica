@@ -18,13 +18,12 @@ import { SuspenderModeloComponent } from './paciente-asignado-modelo-estructura/
 import { ReiniciarModeloComponent } from './paciente-asignado-modelo-estructura/reiniciar-modelo/reiniciar-modelo.component';
 import { VerOrdenComponent } from './paciente-asignado-modelo-estructura/ver-orden/ver-orden.component';
 import { DatosDemograficosComponent } from './paciente-asignado-modelo-estructura/datos-demograficos/datos-demograficos.component';
+import { TrazabilidadEstadosComponent } from './paciente-asignado-modelo-estructura/trazabilidad-estados/trazabilidad-estados.component';
 
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MaterialModule} from './MaterialModule';
-
-
 
 
 const modules = [
@@ -52,7 +51,8 @@ const routes: Routes = [
     SuspenderModeloComponent,
     ReiniciarModeloComponent,
     VerOrdenComponent,
-    DatosDemograficosComponent
+    DatosDemograficosComponent,
+    TrazabilidadEstadosComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -78,7 +78,8 @@ const routes: Routes = [
     SuspenderModeloComponent,
     ReiniciarModeloComponent,
     VerOrdenComponent,
-    DatosDemograficosComponent
+    DatosDemograficosComponent,
+    TrazabilidadEstadosComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

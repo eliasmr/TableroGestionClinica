@@ -6,6 +6,7 @@ import { SuspenderModeloComponent } from '../suspender-modelo/suspender-modelo.c
 import { ReiniciarModeloComponent } from '../reiniciar-modelo/reiniciar-modelo.component';
 import { VerOrdenComponent } from '..//ver-orden/ver-orden.component';
 import { DatosDemograficosComponent } from '../datos-demograficos/datos-demograficos.component';
+import { TrazabilidadEstadosComponent } from '../trazabilidad-estados/trazabilidad-estados.component';
 import { MatDialog } from '@angular/material/dialog';
 
 
@@ -89,5 +90,11 @@ export class PacienteAsignadoModeloComponent implements OnInit {
     const dialogRef = this.dialog.open(DatosDemograficosComponent, {
     });
   }
+
+  openTrazabilidadEstadosDialog(): void {
+    const dialogRef = this.dialog.open(TrazabilidadEstadosComponent, {
+    });
+  }
+  
 
 }
