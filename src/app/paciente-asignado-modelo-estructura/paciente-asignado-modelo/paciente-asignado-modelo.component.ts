@@ -4,6 +4,8 @@ import { AlertasAdministracionPacienteComponent } from '../alertas-administracio
 import { CancelarModeloComponent } from '../cancelar-modelo/cancelar-modelo.component';
 import { SuspenderModeloComponent } from '../suspender-modelo/suspender-modelo.component';
 import { ReiniciarModeloComponent } from '../reiniciar-modelo/reiniciar-modelo.component';
+import { VerOrdenComponent } from '..//ver-orden/ver-orden.component';
+import { DatosDemograficosComponent } from '../datos-demograficos/datos-demograficos.component';
 import { MatDialog } from '@angular/material/dialog';
 
 
@@ -77,6 +79,15 @@ export class PacienteAsignadoModeloComponent implements OnInit {
   openReiniciarModeloDialog(): void {
     const dialogRef = this.dialog.open(ReiniciarModeloComponent, {
     });
-
   }
+
+  openVerOrdenDialog(): void {
+    const dialogRef = this.dialog.open(VerOrdenComponent, {
+    });
+  }
+  openDatosDemograficosDialog(): void {
+    const dialogRef = this.dialog.open(DatosDemograficosComponent, {
+    });
+  }
+
 }

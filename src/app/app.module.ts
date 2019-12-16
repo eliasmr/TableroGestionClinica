@@ -16,13 +16,15 @@ import { AlertasAdministracionPacienteComponent } from './paciente-asignado-mode
 import { CancelarModeloComponent } from './paciente-asignado-modelo-estructura/cancelar-modelo/cancelar-modelo.component';
 import { SuspenderModeloComponent } from './paciente-asignado-modelo-estructura/suspender-modelo/suspender-modelo.component';
 import { ReiniciarModeloComponent } from './paciente-asignado-modelo-estructura/reiniciar-modelo/reiniciar-modelo.component';
-
+import { VerOrdenComponent } from './paciente-asignado-modelo-estructura/ver-orden/ver-orden.component';
+import { DatosDemograficosComponent } from './paciente-asignado-modelo-estructura/datos-demograficos/datos-demograficos.component';
 
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MaterialModule} from './MaterialModule';
-import { VerOrdenComponent } from './paciente-asignado-modelo-estructura/ver-orden/ver-orden.component';
+
+
 
 
 const modules = [
@@ -34,7 +36,7 @@ const routes: Routes = [
 @NgModule({
   imports: [...modules],
   exports: [...modules],
-  declarations: [VerOrdenComponent]
+  declarations: []
 })export class Modules {};
 
 @NgModule({
@@ -48,7 +50,9 @@ const routes: Routes = [
     AlertasAdministracionPacienteComponent,
     CancelarModeloComponent,
     SuspenderModeloComponent,
-    ReiniciarModeloComponent
+    ReiniciarModeloComponent,
+    VerOrdenComponent,
+    DatosDemograficosComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -72,7 +76,9 @@ const routes: Routes = [
     AlertasAdministracionPacienteComponent,
     CancelarModeloComponent,
     SuspenderModeloComponent,
-    ReiniciarModeloComponent
+    ReiniciarModeloComponent,
+    VerOrdenComponent,
+    DatosDemograficosComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
