@@ -15,11 +15,14 @@ import { PacienteAsignadoModeloBusquedaComponent } from './paciente-asignado-mod
 import { AlertasAdministracionPacienteComponent } from './paciente-asignado-modelo-estructura/alertas-administracion-paciente/alertas-administracion-paciente.component';
 import { CancelarModeloComponent } from './paciente-asignado-modelo-estructura/cancelar-modelo/cancelar-modelo.component';
 
+import { DetallesessionComponent } from './detalle-session/detalle-session/detallesession.component';
 
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MaterialModule} from './MaterialModule';
+import { AgendamientoComponent } from './detalle-session/agendamiento/agendamiento.component';
+
 
 
 const modules = [
@@ -43,7 +46,9 @@ const routes: Routes = [
     FiltrosComponent,
     PacienteAsignadoModeloBusquedaComponent,
     AlertasAdministracionPacienteComponent,
-    CancelarModeloComponent
+    CancelarModeloComponent,
+    DetallesessionComponent,
+    AgendamientoComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -65,7 +70,8 @@ const routes: Routes = [
     FiltrosComponent,
     PacienteAsignadoModeloBusquedaComponent,
     AlertasAdministracionPacienteComponent,
-    CancelarModeloComponent
+    CancelarModeloComponent,
+    DetallesessionComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
