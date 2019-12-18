@@ -7,6 +7,7 @@ import {Subject} from 'rxjs'
 export class DataServiceService {
 
   pacientesAsignados : pacienteAsignados[];
+  private modals: any[] = [];
 
   private datosService = new Subject<pacienteAsignados[]>();
   datosObservable = this.datosService.asObservable();
@@ -17,4 +18,10 @@ export class DataServiceService {
     this.pacientesAsignados = pacientesAsignados;
     this.datosService.next(pacientesAsignados);
   }
+  open(id: string) {
+    const modal = this.modals.find(x => x.id === id);
+    modal.open();
+    }
+
 }
+

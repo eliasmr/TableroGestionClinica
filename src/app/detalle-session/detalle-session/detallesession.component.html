@@ -1,0 +1,63 @@
+<body>
+  <div class="form-group">
+    <div class="row border border-gree">
+      <div class="col-1">
+        <button mat-icon-button *ngIf="form" (click)="open(1)">
+          <mat-icon>add_circle</mat-icon>
+        </button>
+        <button mat-icon-button *ngIf="!form" (click)="close(1)">
+          <mat-icon>remove_circle</mat-icon>
+        </button>
+      </div>
+      <div class="col-11">
+        <h5>Antes del siglo</h5>
+      </div>
+    </div>
+  </div>
+  <div class="row border border-gree">
+    <div class="col-1">
+      <button mat-icon-button *ngIf="form2" (click)="open(2)">
+        <mat-icon>add_circle</mat-icon>
+      </button>
+      <button mat-icon-button *ngIf="!form2" (click)="close(2)">
+        <mat-icon>remove_circle</mat-icon>
+      </button>
+    </div>
+    <div class="col-4">
+      <h5>Sesion 1 -dia 1(15/05/2019)</h5>
+    </div>
+    <div class="col-1">
+      <label> 4 hora</label>
+    </div>
+    <div class="col-2 d-flex justify-content-center">
+      <label>Realizada</label>
+    </div>
+  <div class="col-4 d-flex flex-row-reverse bd-highlight">
+    <button mat-icon-button (click)="showModal('modalAgendamiento')">
+      <mat-icon>event_note</mat-icon>
+    </button>
+    <mat-icon>event_note</mat-icon>
+    <mat-icon>event_note</mat-icon>
+    <mat-icon>event_note</mat-icon>
+    <mat-icon>event_note</mat-icon>
+    <mat-icon>event_note</mat-icon>
+    <app-agendamiento></app-agendamiento>
+  </div>
+  </div>
+  <div class="row" *ngIf="!form2">
+    <mat-form-field>
+      <input matInput placeholder="Input">
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Textarea"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Select">
+        <mat-option value="option">Option</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+</body>

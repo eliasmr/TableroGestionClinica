@@ -64,30 +64,25 @@
                                 15 Dias
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                Politerapia de alto riesgo (Folfiri + Bevacizumab)
-                            </div>
-                            <div class="col-sm-2">
-                                Oncologia
-                            </div>
-                            <div class="col-sm-2">
-                                Curativo
-                            </div>
-                            <div class="col-sm-2">
-                                <button mat-icon-button style="height: 28px; width: 28px;">
-                                    <mat-icon aria-hidden="false" style=" vertical-align: top;" aria-label="">priority_high</mat-icon>
-                                </button>    
-                            </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            Politerapia de alto riesgo (Folfiri + Bevacizumab)
                         </div>
-                    </div>          
-            </mat-expansion-panel-header>  
-            <mat-grid-list cols="4"  [style.background]="'skyblue'">
-                    <mat-grid-tile>Tile 1 </mat-grid-tile>
-                    <mat-grid-tile>Tile 2 </mat-grid-tile>
-                    <mat-grid-tile>Tile 3 </mat-grid-tile>
-                    <mat-grid-tile>Tile 4 </mat-grid-tile>
-                    </mat-grid-list> 
-        </mat-expansion-panel>
-    </mat-accordion><br/>
-</div>
+                        <div class="col-sm-2">
+                            Oncologia
+                        </div>
+                        <div class="col-sm-2">
+                            Curativo
+                        </div>
+                        <div class="col-sm-2">
+                            <button mat-icon-button style="height: 28px; width: 28px;">
+                                <mat-icon aria-hidden="false" style=" vertical-align: top;" aria-label="">priority_high</mat-icon>
+                            </button>    
+                        </div>
+                    </div>
+                </div>          
+        </mat-expansion-panel-header>  
+        <mat-grid-list cols="4"  [style.background]="'skyblue'">
+                <app-detallesession></app-detallesession>
+                </mat-grid-list> 
+    </mat-expansion-panel>
