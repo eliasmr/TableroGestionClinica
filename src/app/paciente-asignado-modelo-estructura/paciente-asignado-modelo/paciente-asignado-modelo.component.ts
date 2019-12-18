@@ -2,10 +2,17 @@ import { Component, OnInit,Input } from '@angular/core';
 import { DiagnosticosActivosComponent } from '../diagnosticos-activos/diagnosticos-activos.component';
 import { AlertasAdministracionPacienteComponent } from '../alertas-administracion-paciente/alertas-administracion-paciente.component';
 import { CancelarModeloComponent } from '../cancelar-modelo/cancelar-modelo.component';
+import { SuspenderModeloComponent } from '../suspender-modelo/suspender-modelo.component';
+import { ReiniciarModeloComponent } from '../reiniciar-modelo/reiniciar-modelo.component';
+import { VerOrdenComponent } from '..//ver-orden/ver-orden.component';
+import { DatosDemograficosComponent } from '../datos-demograficos/datos-demograficos.component';
+import { TrazabilidadEstadosComponent } from '../trazabilidad-estados/trazabilidad-estados.component';
 import { MatDialog } from '@angular/material/dialog';
+
 
 import {pacienteAsignados} from '../../filtros/interfacesFiltros';
 import {DataServiceService} from '../../services/data-service.service';
+
 @Component({
   selector: 'app-paciente-asignado-modelo',
   templateUrl: './paciente-asignado-modelo.component.html',
@@ -64,4 +71,30 @@ export class PacienteAsignadoModeloComponent implements OnInit {
     const dialogRef = this.dialog.open(CancelarModeloComponent, {
     });
   }
+
+  openSuspenderModeloDialog(): void {
+    const dialogRef = this.dialog.open(SuspenderModeloComponent, {
+    });
+  }
+
+  openReiniciarModeloDialog(): void {
+    const dialogRef = this.dialog.open(ReiniciarModeloComponent, {
+    });
+  }
+
+  openVerOrdenDialog(): void {
+    const dialogRef = this.dialog.open(VerOrdenComponent, {
+    });
+  }
+  openDatosDemograficosDialog(): void {
+    const dialogRef = this.dialog.open(DatosDemograficosComponent, {
+    });
+  }
+
+  openTrazabilidadEstadosDialog(): void {
+    const dialogRef = this.dialog.open(TrazabilidadEstadosComponent, {
+    });
+  }
+  
+
 }

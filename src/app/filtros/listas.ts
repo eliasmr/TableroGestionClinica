@@ -22,10 +22,10 @@ export class listas {
       ];
 
       listaPacientesAsignados :pacienteAsignados[] = [
-        {nombrePaciente : 'juan de jesus', generoPaciente : 'masculino',edadPaciente : 50},
-        {nombrePaciente : 'jaime jaime', generoPaciente : 'masculino',edadPaciente : 60},
-        {nombrePaciente : 'Maria maria', generoPaciente : 'femenino',edadPaciente : 100},
-        {nombrePaciente : 'Marcela Marcel', generoPaciente : 'femenino',edadPaciente : 110},
+        {nombrePaciente : 'Juan Perez', generoPaciente : 'Masculino',edadPaciente : 65},
+        {nombrePaciente : 'Luz Maria García', generoPaciente : 'Femenino',edadPaciente : 63},
+        {nombrePaciente : 'Marta Guzmán', generoPaciente : 'Femenino',edadPaciente : 68},
+        {nombrePaciente : 'Marcela Castro', generoPaciente : 'Femenino',edadPaciente : 62},
 
       ]
 }
